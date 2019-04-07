@@ -1,0 +1,362 @@
+﻿<Window x:Class="WoWEdit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="World Of Warcraft Editor - Data 99.0.0.0 (D3D11) - B13784" Height="1080" Width="1920" Loaded="Window_Loaded">
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="Project" />
+                <MenuItem Header="Edit" />
+                <MenuItem Header="View"  />
+                <MenuItem Header="Terrain" />
+                <MenuItem Header="World" />
+                <MenuItem Header="Character Info" />
+                <MenuItem Header="Spawning" />
+                <MenuItem Header="State Control" />
+                <MenuItem Header="Text" />
+                <MenuItem Header="Spells" />
+                <MenuItem Header="Items" />
+                <MenuItem Header="Quest" />
+                <MenuItem Header="Sound" />
+                <MenuItem Header="Skills" />
+                <MenuItem Header="Garrisons" />
+                <MenuItem Header="Misc" />
+                <MenuItem Header="Help" />
+            </Menu>
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar Name="ToolbarTop">
+                    <Button>
+                        <Image Source="{StaticResource Button1}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button2}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button4}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image Source="{StaticResource Button5}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button6}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button7}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button8}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button9}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button10}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button69}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image Source="{StaticResource Button11}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button14}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image Source="{StaticResource Button12}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image Source="{StaticResource Button13}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button15}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button18}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image Source="{StaticResource Button16}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button19}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button20}" Width="32" Height="32" />
+                    </Button>
+                </ToolBar>
+                <ToolBar Name="ToolbarSearch">
+                    <Grid Width="250" Margin="5 0 5 0">
+                        <TextBox Height="21" x:Name="Search" />
+                        <TextBlock Height="21" IsHitTestVisible="False" Text="Quick Search" Foreground="Gray" Margin="4 3 0 0">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=Search}" Value="">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                </ToolBar>
+                <ToolBar Name="ToolbarTuning">
+                    <Label Margin="0 5 0 0">Content Tuning:</Label>
+                    <ComboBox Width="250">
+                        <ComboBoxItem IsSelected="True">8.0 WQ / Endgame / 120 Only (464)</ComboBoxItem>
+                    </ComboBox>
+                    <Button>
+                        <Image Source="{StaticResource List}" Width="16" Height="16" />
+                    </Button>
+                    <Button Content="Edit" />
+                </ToolBar>
+            </ToolBarTray>
+            <StatusBar DockPanel.Dock="Bottom">
+                <StatusBarItem DockPanel.Dock="Right">
+                    <TextBlock Width="150">Errors: 0</TextBlock>
+                </StatusBarItem>
+                <Separator DockPanel.Dock="Right" />
+                <StatusBarItem DockPanel.Dock="Right" Width="55">
+                    <TextBlock>FPS: 75.3</TextBlock>
+                </StatusBarItem>
+                <Separator DockPanel.Dock="Right" />
+                <StatusBarItem DockPanel.Dock="Right">
+                    <TextBlock Width="200">No Client Connected</TextBlock>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <TextBlock>For Help, press F1</TextBlock>
+                </StatusBarItem>
+            </StatusBar>
+            <ToolBarTray DockPanel.Dock="Bottom">
+                <ToolBar Name="ToolbarBottom">
+                    <Button>
+                        <Image Source="{StaticResource Button50}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image Source="{StaticResource Button51}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button52}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button53}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button70}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image Source="{StaticResource Button54}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button71}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button56}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button57}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button58}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button59}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button60}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button61}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button62}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button98}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button63}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button12}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button72}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button11}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button46}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button64}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button65}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button66}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button73}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button67}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button68}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button74}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button75}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button76}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button77}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button78}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button79}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button80}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button5}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button18}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button81}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button82}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button25}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button83}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button84}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image Source="{StaticResource Button85}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button86}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button87}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button88}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button89}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                </ToolBar>
+            </ToolBarTray>
+            <ToolBarTray DockPanel.Dock="Left" Orientation="Vertical">
+                <ToolBar Name="ToolbarLeft">
+                    <Button>
+                        <Image Source="{StaticResource Button21}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button23}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image Source="{StaticResource Button25}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button26}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button27}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button28}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button29}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button30}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button99}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image Source="{StaticResource Button97}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button33}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button34}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button35}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image Source="{StaticResource Button37}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button38}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button40}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image Source="{StaticResource Button41}" Width="32" Height="32" />
+                    </Button>
+                    <Separator />
+                    <Button>
+                        <Image Source="{StaticResource Button42}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button43}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button44}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button46}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button48}" Width="32" Height="32" />
+                    </Button>
+                    <Button>
+                        <Image Source="{StaticResource Button49}" Width="32" Height="32" />
+                    </Button>
+                </ToolBar>
+            </ToolBarTray>
+            <StackPanel Background="Black" />
+        </DockPanel>
+    </Grid>
+</Window>
